@@ -1,6 +1,8 @@
 # PreciseXY - version 2
 Affordable and precise XY and Z movement platform for scientific experimentation, now in the second iteration.
 
+![precisexy-v2](Photos/precisexy-v2-profile.jpg)
+
 At the moment files of the design are being completed and will be published shortly.
 
 ## X, Y gantry
