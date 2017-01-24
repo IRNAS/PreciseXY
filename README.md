@@ -1,26 +1,56 @@
-# PreciseXY
-Affordable and precise XY and Z movement platform for scientific experimentation
+# PreciseXY - version 2
+Affordable and precise XY and Z movement platform for scientific experimentation, now in the second iteration.
 
-![board](https://raw.githubusercontent.com/IRNAS/PreciseXY/master/Photos/PreciseXY-1.jpg)
+At the moment files of the design are being completed and will be published shortly.
 
 ## X, Y gantry
 
 This CNC gantry is based on [Core (X,Y)](www.corexy.com) project, to explore and design a stable and precise mechanism with minimal part count. Trolley for mounting Z axis is connected with two stepper motors over the system of pulleys with two timing belts, one for each motor which provide movements in X, Y directions. Because of the cross section mounting of timing belts, good horizontal stability is achieved. Also we can use only two stepper motors no matter the number of linear guides used without compromising structural strength and accuracy. Z axis enables modular usage and installation of various needed systems. With that, utilization of the gantry is increased.
 
-Adopted system was upgraded with the following enhancements:
+## Specification
+ * Movement X: 300mm
+ * Movement Y: 250mm
+ * Movement Z: 35mm
+ * Acceleration: up to 300mm/s^2
+ * Speed: up to 18000mm/min
+ * Weight: 
+ 
+## GRBL settings, modified from defaults:
+ * $3: 111 - dir port invert mask
+ * $22: 1 - homing cycle, bool
+ * $24: 1000 - homing feed, mm/min
+ * $25: 5000 - homing seek, mm/min
+ * $27: 2.000 - homing pull-off, mm
+ * $100: 160 - x, step/mm
+ * $101: 160 - y, step/mm
+ * $102: 4000 - z, step/mm
+ * $110: 18000 - x max rate, mm/min
+ * $111: 18000 - y max rate, mm/min
+ * $112: 500 - z max rate, mm/min
+ * $120: 300 - x accel, mm/sec^2
+ * $121: 300 - y accel, mm/sec^2
+ * $122: 10 - z accel, mm/sec^2
+ * $130: 300 - x max travel, mm
+ * $131: 250 - y max travel, mm 
+ * $132: 35 - z max travel, mm 
 
-* Instead of using smooth rod with linear bearings, we used linear rails with carriage. Thus we reduce the number of support elements necessary for fastening guide system, and increase the precision of the movement in the X and Y direction.
-* For the XY plane we're using the 350 mm long linear rails. With implementing useful construction solutions, the whole length of the linear rail can be used. That means 350X350mm of working area in XY plane minus the dimensions of trolley used for Z axis.
-* We added tightners for fine precision settings for the timing belts.
-* All the components are made out of  5 mm thick aluminium plate, and fixed by screwing.
-* We added levelling legs that allow the stabilization on the surface.
+## Z attachment
+The Z axis is designed such that a number of different toolheads can be attached to it. The Z axis mount has 4 M3 holes suitable for mounting a custom designed and 3d printed bracket. Drawing for designing the mounts is displayed here:
 
-These modifications allow us repeating accuracy better than 0.05 mm (in X and Y), and feed rates up to 1800mm/min.
 
-## Future improvements:
+![z mounting](precixexy-z-mounting.png)
 
-* Double carriage system for X axis, to prevent unwanted diagonal movements
-* Replacing belt drive with leadscrew, which will increase the accuracy of the positioning
+
+## Upgrades from version 1
+The overall design has been improved for stability, ease of manufacturing and reliable machining, the following key upgrades have been made.
+ * Added a double carriage on Y axis
+ * Added endswitches
+ * Optimized idler wheel placement for more precise movement
+ * Optimized cabling, all electronics placed on the head via a durable flexible cable
+ * Designed a new precise Z stage
+ * Optimised carriage assembly
+ * Eliminated x to y axis error due to corexy movement mechanics
+ * Modified the Z axis carriage for scientific instrument mounting. 
 
 ---
 
